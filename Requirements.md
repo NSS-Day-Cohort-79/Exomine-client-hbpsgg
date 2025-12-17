@@ -1,6 +1,6 @@
 # Exomine
 
-This project has you building an application that lets governors of different colonies in our Solar System purchase minerals from various mining facilities that human have established.
+This project has you building an application that lets governors of different colonies in our Solar System purchase minerals from various mining facilities that human have established..
 
 > "This project has made me realize the importance of an ERD and quality design of your data structure and how to access that data."
 >   - Former NSS Student

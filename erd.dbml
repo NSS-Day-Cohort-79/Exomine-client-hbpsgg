@@ -1,0 +1,36 @@
+Table governors {
+  id int [pk]
+  name varchar
+  active boolean
+  colonyId int [ref: > colonies.id]
+}
+
+Table colonies {
+  id int [pk]
+  name varchar
+}
+
+Table facilities {
+  id int [pk]
+  name varchar
+  active boolean
+}
+
+Table minerals {
+  id int [pk]
+  name varchar
+}
+
+Table colony_minerals {
+  id int [pk]
+  colonyId int [ref: > colonies.id]
+  mineralId int [ref: > minerals.id]
+  quantity int
+}
+
+Table facility_minerals {
+  id int [pk]
+  facilityId int [ref: > facilities.id]
+  mineralId int [ref: > minerals.id]
+  quantity int
+}

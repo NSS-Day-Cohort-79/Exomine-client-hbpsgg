@@ -1,7 +1,7 @@
 //fetch governors
 export const getGovernors = async () => {
-    return fetch(`http://localhost:8088/Governor?_expand=colony`).then((res) => 
-    res.json())
+    return fetch(`http://localhost:8088/Governor?_expand=colony`).then((res) =>
+        res.json())
 }
 //fetch colony inventory
 export const getColonyInventory = async () => {
@@ -10,5 +10,10 @@ export const getColonyInventory = async () => {
 
 //Fetch minerals
 export const getMinerals = async () => {
-    return fetch (`http://localhost:8088/minerals`).then((res) => res.json())
+    return fetch(`http://localhost:8088/minerals`).then((res) => res.json())
+}
+
+//Fetch facilities
+export const getFacilities = async () => {
+    return fetch(`http://localhost:8088/Facility`).then((res) => res.json())
 }

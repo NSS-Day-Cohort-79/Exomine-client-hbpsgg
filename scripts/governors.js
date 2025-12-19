@@ -5,10 +5,10 @@ const handleLocationChange = (changeEvent) => {
         setSocioLocationId(locationId)
     }
 }
-export const LocationChoices = async () => {
+export const GovernorChoices = async () => {
     s
-    const response = await fetch("http://localhost:8088/ocioLocations")
-    const locations = await response.json()
+    const response = await fetch("http://localhost:8088/Governor")
+    const governors = await response.json()
 }
 
 // Exported function to render governors

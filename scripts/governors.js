@@ -1,30 +1,24 @@
-import { setSocioLocationId } from "./transientState.js"
-const handleLocationChange = (changeEvent) => {
-    if (changeEvent.target.name === "location") {
-        const locationId = parseInt(changeEvent.target.value)
-        setSocioLocationId(locationId)
+import { getGovernors } from "./fetchCalls.js"
+import { setGovernor } from "./TransientState.js"
+
+const handleGovernorChange = (changeEvent) => {
+    if (changeEvent.target.name === "governor") {
+        setGovernor(parseInt(changeEvent.target.value))
     }
 }
-export const GovernorChoices = async () => {
-    s
-    const response = await fetch("http://localhost:8088/Governor")
-    const governors = await response.json()
-}
 
-// Exported function to render governors
-export const Governors = () => {
-    const activeGovernors = governors.filter(gov => gov.isActive)
+export const Governors = async () => {
+    const governors = await getGovernors()
 
-    let html = `
-        <label for="governor">Choose a Governor</label>
-        <select id="governor">
-            <option value="0">Select a governor...</option>
-    `
+    let html = `<select name="governor">
+        <option value="0">Choose a governor</option>`
+
+    const activeGovernors = governors.filter(gov => gov.active === true)
 
     for (const governor of activeGovernors) {
         html += `
             <option value="${governor.id}">
-                ${governor.name}
+                ${governor.name} (${governor.colony.name})
             </option>
         `
     }
@@ -33,3 +27,5 @@ export const Governors = () => {
 
     return html
 }
+
+document.addEventListener("change", handleGovernorChange)

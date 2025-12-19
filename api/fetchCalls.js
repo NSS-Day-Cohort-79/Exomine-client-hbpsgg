@@ -12,3 +12,7 @@ export const getColonyInventory = async () => {
 export const getMinerals = async () => {
     return fetch (`http://localhost:8088/minerals`).then((res) => res.json())
 }
+
+export const getFacilities = async () => {
+    return fetch (`http://localhost:8088/Facility`).then((res) => res.json())
+}
